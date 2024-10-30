@@ -1,7 +1,7 @@
 function Item({ name, importance }) {
     return (
       <li className="item">
-        {name}
+        {name} {importance != 0 && <i>(Importancia: {importance})</i>} {importance == 0 && <span>(Importancia: {importance})</span>}
       </li>
     );
   }

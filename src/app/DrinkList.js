@@ -1,14 +1,29 @@
 function Drink({ name }) {
+  const te={
+    name:'te',
+    partePlanta:'hoja',
+    cafeina:'15–70 mg/taza',
+    antiguedad:'4,000+ años'
+  }
+  const cafe={
+    name:'cafe',
+    partePlanta:'grano',
+    cafeina:'80–185 mg/taza',
+    antiguedad:'1,000+ años'
+  }
+  var planta;
+  {name === 'té' ?  planta = te: planta = cafe}
     return (
       <section>
         <h1>{name}</h1>
+        {planta.name}
         <dl>
           <dt>Parte de la planta</dt>
-          <dd>{name === 'té' ? 'hoja' : 'grano'}</dd>
+          <dd>{planta.partePlanta}</dd>
           <dt>Contenido de cafeína</dt>
-          <dd>{name === 'té' ? '15–70 mg/taza' : '80–185 mg/taza'}</dd>
+          <dd>{planta.cafeina}</dd>
           <dt>Antigüedad</dt>
-          <dd>{name === 'té' ? '4,000+ años' : '1,000+ años'}</dd>
+          <dd>{planta.antiguedad}</dd>
         </dl>
       </section>
     );
